@@ -113,5 +113,21 @@ start ms-cxh:localonly
 ```
 https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account
 
+## sharing drives from host
+
+install on host
+```bash
+sudo apt install virtiofsd
+```
+The `virtiofsd` command is installed into `/usr/libexec/virtiofsd` which is not on the root path.
+
+enable shrared memory with host
 
 https://linuxconfig.org/how-to-mount-a-host-directory-inside-a-kvm-virtual-machine
+https://shallowsky.com/blog/linux/qemu-shared-folder.html
+https://www.debugpoint.com/kvm-share-folder-windows-guest/
+https://virtio-fs.gitlab.io/howto-windows.html
+
+### install winfsp into guest
+
+https://winfsp.dev/rel/
