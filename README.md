@@ -112,3 +112,6 @@ do shoft-f10 and
 start ms-cxh:localonly
 ```
 https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account
+
+
+https://linuxconfig.org/how-to-mount-a-host-directory-inside-a-kvm-virtual-machine
