@@ -5,10 +5,25 @@ sudo apt update
 sudo apt upgrade
 ```
 
+check if system supports virtualization, install `cpu-checker` 
+
+```bash
+sudo apt install cpu-checker
+```
+
+then run `kvm-ok` should see results like this if all is ok. otherwise, may need to turn on virtualization option in the bios.
+```bash
+$ kvm-ok
+INFO: /dev/kvm exists
+KVM acceleration can be used
+```
+
+Install qemu/kvm toools
 ```
 sudo apt install qemu-system qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
 ```
 
+Make sure your user is in the appropriate groups - for me these have been taken care of when installing the qemu/kvm tools.
 ```
 sudo adduser $USER libvirt
 sudo adduser $USER kvm
