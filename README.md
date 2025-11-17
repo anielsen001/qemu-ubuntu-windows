@@ -29,7 +29,36 @@ sudo adduser $USER libvirt
 sudo adduser $USER kvm
 ```
 
+Check the status of the daemon
+```bash
+sudo systemctl status libvirtd
+● libvirtd.service - libvirt legacy monolithic daemon
+     Loaded: loaded (/usr/lib/systemd/system/libvirtd.service; enabled; preset:>
+     Active: active (running) since Mon 2025-11-17 09:13:45 EST; 1min 42s ago
+TriggeredBy: ● libvirtd.socket
+             ● libvirtd-admin.socket
+             ● libvirtd-ro.socket
+       Docs: man:libvirtd(8)
+             https://libvirt.org/
+   Main PID: 1882 (libvirtd)
+      Tasks: 22 (limit: 32768)
+     Memory: 19.7M (peak: 23.6M)
+        CPU: 374ms
+     CGroup: /system.slice/libvirtd.service
+             ├─1882 /usr/sbin/libvirtd --timeout 120
+             ├─1993 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/defa>
+             └─1994 /usr/sbin/dnsmasq --conf-file=/var/lib/libvirt/dnsmasq/defa>
+
+Nov 17 09:13:45 MagNav systemd[1]: Started libvirtd.service - libvirt legacy mo>
+Nov 17 09:13:46 MagNav dnsmasq[1993]: started, version 2.90 cachesize 150
+Nov 17 09:13:46 MagNav dnsmasq[1993]: compile time options: IPv6 GNU-getopt DBu>
+Nov 17 09:13:46 MagNav dnsmasq-dhcp[1993]: DHCP, IP range 192.168.122.2 -- 192.>
+Nov 17 09:13:46 MagNav dnsmasq-dhcp[1993]: DHCP, sockets bound exclusively to i>
+Nov 17 09:13:46 MagNav dnsmasq[1993]: reading /etc/resolv.conf
 ```
+
+If it's not running enable it
+```bash
 sudo systemctl enable --now libvirtd
 sudo systemctl status libvirtd
 ```
@@ -39,6 +68,29 @@ launch the virtual manager
 ```
 virt-manager
 ```
+
+## Install windows
+
+### Download windows iso
+
+go to <https://www.microsoft.com/en-us/software-download/windows11> and look for the section called 
+"Download Windows 11 Disk Image (ISO) for x64 devices". You'll have to select the iso option (only presented with one) and then answer some questions about which language support you prefer. The download will start, it's about 8 GB.
+
+### Download virtio drivers
+
+- <https://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers>
+- <https://github.com/virtio-win/virtio-win-pkg-scripts/blob/master/README.md>
+- Download link: <https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso>
+
+### Create VM
+
+Start virtual machine manager
+```bash
+virt-manager
+```
+In the GUI select `File->New Virtual Machine`
+
+Give it 16384 MB RAM
 
 To bypass windows password/account
 
