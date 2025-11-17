@@ -90,7 +90,12 @@ virt-manager
 ```
 In the GUI select `File->New Virtual Machine`
 
-Give it 16384 MB RAM
+- Add a second CD-ROM and insert the virtio drivers iso image. You may need this to install drivers so that windows 11 can see the virtual hdd.
+- Give it 16384 MB RAM
+
+When the system starts to boot, and talks about pressing any key to boot from CD-ROM hit a key. If waiting too long, the system may not boot and go to bios instead. 
+
+you can get the cursur control back with `CTRL-L + ATL-L`
 
 To bypass windows password/account
 
