@@ -123,10 +123,10 @@ The `virtiofsd` command is installed into `/usr/libexec/virtiofsd` which is not 
 
 enable shrared memory with host
 
-https://linuxconfig.org/how-to-mount-a-host-directory-inside-a-kvm-virtual-machine
-https://shallowsky.com/blog/linux/qemu-shared-folder.html
-https://www.debugpoint.com/kvm-share-folder-windows-guest/
-https://virtio-fs.gitlab.io/howto-windows.html
+- https://linuxconfig.org/how-to-mount-a-host-directory-inside-a-kvm-virtual-machine
+- https://shallowsky.com/blog/linux/qemu-shared-folder.html
+- https://www.debugpoint.com/kvm-share-folder-windows-guest/
+- https://virtio-fs.gitlab.io/howto-windows.html
 
 ### install winfsp into guest
 
