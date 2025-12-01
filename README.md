@@ -131,3 +131,10 @@ enable shrared memory with host
 ### install winfsp into guest
 
 https://winfsp.dev/rel/
+
+### Enable VirtIO-FS service
+
+go to:
+`Start Menu -> Computer Managment -> Services and Applications -> Services -> VirtIO-FS Service`
+double click the service and select the "start" button. shared drive should appear.
+
